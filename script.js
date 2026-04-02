@@ -1,5 +1,5 @@
 
-const WEBHOOK_URL = "https://mbaghdadi6g.app.n8n.cloud/webhook-test/simplify-financial-pdf";
+const WEBHOOK_URL = "https://mbaghdadi6g.app.n8n.cloud/webhook/simplify-financial-pdf";
 
 const pdfFileInput = document.getElementById("pdfFile");
 const fileStatus = document.getElementById("fileStatus");
