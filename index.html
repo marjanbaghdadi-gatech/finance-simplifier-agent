@@ -19,41 +19,57 @@
 
     <section class="upload card" aria-labelledby="upload-title">
       <h2 id="upload-title">Upload your file</h2>
-      <p class="help-text">Choose a PDF document, then press the button below.</p>
-
-      <label for="pdfFile" class="file-label">Choose PDF File</label>
-      <input id="pdfFile" name="pdfFile" type="file" accept="application/pdf" />
-
-      <div id="fileStatus" class="file-status" aria-live="polite">No file selected yet.</div>
-
-      <button id="submitBtn" class="primary-btn" type="button">Simplify My Document</button>
-
-      <p class="small-note">
-        Your document should be a PDF. Large files may take longer to process.
+      <p class="help-text">
+        Choose a PDF document, then press the button below.
       </p>
-    </section>
 
-    <section id="loadingCard" class="status card hidden" aria-live="polite">
-      <h2>Please wait</h2>
-      <p>We are reading your document and preparing a simple explanation.</p>
-      <div class="spinner" aria-hidden="true"></div>
-    </section>
+      <form
+        action="https://mbaghdadi6g.app.n8n.cloud/webhook/simplify-financial-pdf"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <label for="pdfFile" class="file-label">Choose PDF File</label>
+        <input
+          id="pdfFile"
+          name="data"
+          type="file"
+          accept="application/pdf"
+          required
+        />
 
-    <section id="errorCard" class="status error card hidden" aria-live="assertive">
-      <h2>Something went wrong</h2>
-      <p id="errorMessage">We could not process the file.</p>
-    </section>
+        <div id="fileStatus" class="file-status" aria-live="polite">
+          No file selected yet.
+        </div>
 
-    <section id="resultsSection" class="results hidden" aria-live="polite">
-      <div class="card result-header">
-        <h2>Your simplified explanation</h2>
-        <p>You can read each section below one at a time.</p>
-      </div>
+        <button class="primary-btn" type="submit">Simplify My Document</button>
 
-      <div id="resultsCards"></div>
+        <p class="small-note">
+          After you click the button, the result will open as a new page from n8n.
+        </p>
+      </form>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    const pdfFileInput = document.getElementById("pdfFile");
+    const fileStatus = document.getElementById("fileStatus");
+
+    pdfFileInput.addEventListener("change", () => {
+      const file = pdfFileInput.files[0];
+
+      if (!file) {
+        fileStatus.textContent = "No file selected yet.";
+        return;
+      }
+
+      if (file.type !== "application/pdf") {
+        fileStatus.textContent = "Please choose a PDF file.";
+        return;
+      }
+
+      const fileSizeMb = (file.size / (1024 * 1024)).toFixed(1);
+      fileStatus.textContent = `Selected file: ${file.name} (${fileSizeMb} MB)`;
+    });
+  </script>
 </body>
 </html>
