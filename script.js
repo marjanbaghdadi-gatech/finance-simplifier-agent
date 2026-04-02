@@ -43,9 +43,9 @@ submitBtn.addEventListener("click", async () => {
     return;
   }
 
-  if (WEBHOOK_URL === "https://mbaghdadi6g.app.n8n.cloud/webhook-test/simplify-financial-pdf") {
-    showError("Please add your n8n webhook URL inside script.js before using this page.");
-    return;
+ if (WEBHOOK_URL === "PASTE_YOUR_N8N_WEBHOOK_URL_HERE") {
+  showError("Please add your n8n webhook URL inside script.js before using this page.");
+  return;
   }
 
   const formData = new FormData();
