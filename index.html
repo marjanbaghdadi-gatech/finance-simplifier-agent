@@ -9,17 +9,17 @@
 <body>
   <main class="page">
     <section class="hero card">
-      
-      <h1>Understand Your Financial Documents</h1>
+      <div class="hero-badge">Easy to Read</div>
+      <h1>Understand Financial Information More Easily</h1>
       <p class="lead">
-        Upload your financial document and get a clear, simplified explanation in plain language.
+        Use one tool to simplify a financial document, or use the second tool to compare two or more financial choices in plain language.
       </p>
     </section>
 
     <section class="upload card" aria-labelledby="upload-title">
-      <h2 id="upload-title">Upload your file</h2>
+      <h2 id="upload-title">Financial Document Simplifier</h2>
       <p class="help-text">
-        Choose a PDF document, then press the button below.
+        Upload a PDF and get a simple explanation in clear language.
       </p>
 
       <form
@@ -50,10 +50,64 @@
       </form>
     </section>
 
+    <section class="compare card" aria-labelledby="compare-title">
+      <h2 id="compare-title">Financial Decision Comparison Assistant</h2>
+      <p class="help-text">
+        Compare two or more financial choices in simple language.
+      </p>
+
+      <form
+        action="https://mbaghdadi6g.app.n8n.cloud/webhook/compare-financial-options"
+        method="POST"
+        target="_blank"
+        class="compare-form"
+      >
+        <label for="option1" class="field-label">Option 1</label>
+        <textarea
+          id="option1"
+          name="option1"
+          rows="4"
+          placeholder="Example: Put my money in a savings account"
+          required
+        ></textarea>
+
+        <label for="option2" class="field-label">Option 2</label>
+        <textarea
+          id="option2"
+          name="option2"
+          rows="4"
+          placeholder="Example: Buy stocks"
+          required
+        ></textarea>
+
+        <label for="option3" class="field-label">Option 3 (optional)</label>
+        <textarea
+          id="option3"
+          name="option3"
+          rows="4"
+          placeholder="Example: Put money in a certificate of deposit"
+        ></textarea>
+
+        <label for="what_matters" class="field-label">What matters most to you?</label>
+        <textarea
+          id="what_matters"
+          name="what_matters"
+          rows="4"
+          placeholder="Example: low risk, easy access to money, long-term growth"
+        ></textarea>
+
+        <button class="compare-btn" type="submit">Compare My Options</button>
+
+        <p class="small-note">
+          The comparison result will open in a new tab.
+        </p>
+      </form>
+    </section>
+
     <section class="info card">
       <h2>How it works</h2>
       <p>
-        This tool sends your PDF to an AI document helper, which reads the file and returns a simpler explanation.
+        The first tool explains uploaded financial documents in simpler language. The second tool compares money choices side by side in plain language.
       </p>
     </section>
   </main>
