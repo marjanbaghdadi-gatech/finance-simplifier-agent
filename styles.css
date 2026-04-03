@@ -11,8 +11,6 @@
   --accent-dark: #15458a;
   --soft: #dbeafe;
   --border: #d6deeb;
-  --error-bg: #fff1f2;
-  --error-border: #f5c2c7;
   --shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
 }
 
@@ -56,7 +54,9 @@ body {
   margin-bottom: 12px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-top: 0;
   line-height: 1.25;
 }
@@ -75,15 +75,13 @@ h2 {
 .help-text,
 .small-note,
 .file-status,
-.result-card p,
-.result-card li {
+.info p {
   font-size: 1.08rem;
 }
 
 .help-text,
 .small-note,
-.file-status,
-.result-header p {
+.file-status {
   color: var(--muted);
 }
 
@@ -126,73 +124,6 @@ input[type="file"] {
   background: var(--accent-dark);
 }
 
-.primary-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.status {
-  text-align: center;
-}
-
-.error {
-  background: var(--error-bg);
-  border-color: var(--error-border);
-}
-
-.hidden {
-  display: none;
-}
-
-.spinner {
-  margin: 20px auto 0;
-  width: 52px;
-  height: 52px;
-  border: 6px solid #dbeafe;
-  border-top: 6px solid var(--accent);
-  border-radius: 50%;
-  animation: spin 0.9s linear infinite;
-}
-
-.results {
-  display: grid;
-  gap: 18px;
-}
-
-#resultsCards {
-  display: grid;
-  gap: 18px;
-}
-
-.result-card {
-  background: #ffffff;
-  border: 2px solid var(--border);
-  border-radius: 22px;
-  padding: 24px;
-  box-shadow: var(--shadow);
-}
-
-.result-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--accent-dark);
-}
-
-.result-card ul {
-  margin: 0;
-  padding-left: 24px;
-}
-
-.result-card li + li {
-  margin-top: 10px;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media (max-width: 640px) {
   body {
     font-size: 18px;
@@ -202,8 +133,7 @@ input[type="file"] {
     padding: 18px 14px 40px;
   }
 
-  .card,
-  .result-card {
+  .card {
     padding: 20px;
     border-radius: 18px;
   }
