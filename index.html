@@ -1,48 +1,63 @@
-const pdfFileInput = document.getElementById("pdfFile");
-const fileStatus = document.getElementById("fileStatus");
-const uploadTabBtn = document.getElementById("uploadTabBtn");
-const resultsTabBtn = document.getElementById("resultsTabBtn");
-const uploadTab = document.getElementById("uploadTab");
-const resultsTab = document.getElementById("resultsTab");
-const uploadForm = document.getElementById("uploadForm");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Financial Document Helper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero card">
+      <div class="hero-badge">Easy to Read</div>
+      <h1>Understand Your Financial PDF</h1>
+      <p class="lead">
+        Upload a PDF and get a simple explanation in clear language.
+        This page is designed to be easier to read for older adults and anyone who wants less confusing wording.
+      </p>
+    </section>
 
-function showTab(tabName) {
-  const showUpload = tabName === "upload";
+    <section class="upload card" aria-labelledby="upload-title">
+      <h2 id="upload-title">Upload your file</h2>
+      <p class="help-text">
+        Choose a PDF document, then press the button below.
+      </p>
 
-  uploadTab.classList.toggle("active", showUpload);
-  resultsTab.classList.toggle("active", !showUpload);
+      <form
+        action="https://mbaghdadi6g.app.n8n.cloud/webhook/simplify-financial-pdf"
+        method="POST"
+        enctype="multipart/form-data"
+        target="_blank"
+      >
+        <label for="pdfFile" class="file-label">Choose PDF File</label>
+        <input
+          id="pdfFile"
+          name="data"
+          type="file"
+          accept="application/pdf"
+          required
+        />
 
-  uploadTabBtn.classList.toggle("active", showUpload);
-  resultsTabBtn.classList.toggle("active", !showUpload);
+        <div id="fileStatus" class="file-status" aria-live="polite">
+          No file selected yet.
+        </div>
 
-  uploadTabBtn.setAttribute("aria-selected", showUpload ? "true" : "false");
-  resultsTabBtn.setAttribute("aria-selected", showUpload ? "false" : "true");
-}
+        <button class="primary-btn" type="submit">Simplify My Document</button>
 
-uploadTabBtn.addEventListener("click", () => showTab("upload"));
-resultsTabBtn.addEventListener("click", () => showTab("results"));
+        <p class="small-note">
+          The simplified result will open in a new tab.
+        </p>
+      </form>
+    </section>
 
-if (pdfFileInput && fileStatus) {
-  pdfFileInput.addEventListener("change", () => {
-    const file = pdfFileInput.files[0];
+    <section class="info card">
+      <h2>How it works</h2>
+      <p>
+        This tool sends your PDF to the document helper, which reads the file and returns a simpler explanation.
+      </p>
+    </section>
+  </main>
 
-    if (!file) {
-      fileStatus.textContent = "No file selected yet.";
-      return;
-    }
-
-    if (file.type !== "application/pdf") {
-      fileStatus.textContent = "Please choose a PDF file.";
-      return;
-    }
-
-    const fileSizeMb = (file.size / (1024 * 1024)).toFixed(1);
-    fileStatus.textContent = `Selected file: ${file.name} (${fileSizeMb} MB)`;
-  });
-}
-
-if (uploadForm) {
-  uploadForm.addEventListener("submit", () => {
-    showTab("results");
-  });
-}
+  <script src="script.js"></script>
+</body>
+</html>
