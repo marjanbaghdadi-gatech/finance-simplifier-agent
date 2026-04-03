@@ -29,12 +29,6 @@
 
   --compare-soft: #f3e8ff;
   --compare-border: #d8b4fe;
-
-  --secondary-btn-bg: #eef2ff;
-  --secondary-btn-text: #4338ca;
-  --secondary-btn-border: #a5b4fc;
-  --secondary-btn-hover-bg: #e0e7ff;
-  --secondary-btn-hover-border: #818cf8;
 }
 
 body {
@@ -107,7 +101,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin-bottom: 16px;
 }
 
@@ -141,8 +135,7 @@ input[type="file"] {
 
 .file-label,
 .primary-btn,
-.compare-btn,
-.secondary-btn {
+.compare-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -187,7 +180,7 @@ input[type="file"] {
   border: 2px solid var(--compare-btn-border);
   background: var(--compare-btn-bg);
   color: var(--compare-btn-text);
-  margin-top: 10px;
+  margin-top: 18px;
 }
 
 .compare-btn:hover,
@@ -197,31 +190,39 @@ input[type="file"] {
   color: var(--compare-btn-hover-text);
 }
 
-.secondary-btn {
-  border: 2px solid var(--secondary-btn-border);
-  background: var(--secondary-btn-bg);
-  color: var(--secondary-btn-text);
-  margin-top: 10px;
-}
-
-.secondary-btn:hover,
-.secondary-btn:focus {
-  background: var(--secondary-btn-hover-bg);
-  border-color: var(--secondary-btn-hover-border);
-}
-
 .compare-form {
-  gap: 14px;
+  gap: 16px;
 }
 
-.shared-grid {
+.calculator-grid {
   width: 100%;
   max-width: 760px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+.options-two-col {
+  width: 100%;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.option-card {
+  background: rgba(255, 255, 255, 0.84);
+  border: 2px solid var(--compare-border);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: left;
+}
+
+.option-card h3 {
+  text-align: center;
 }
 
 .field-block {
@@ -230,11 +231,6 @@ input[type="file"] {
   flex-direction: column;
   align-items: stretch;
   text-align: left;
-}
-
-.full-width {
-  width: 100%;
-  max-width: 760px;
 }
 
 .field-label {
@@ -247,30 +243,9 @@ input[type="file"] {
   margin-bottom: 6px;
 }
 
-.options-container {
-  width: 100%;
-  max-width: 760px;
-  display: grid;
-  gap: 18px;
-  margin-top: 10px;
-}
-
-.option-card {
-  background: rgba(255, 255, 255, 0.82);
-  border: 2px solid var(--compare-border);
-  border-radius: 18px;
-  padding: 20px;
-  text-align: left;
-}
-
-.option-card h3 {
-  text-align: center;
-}
-
 input[type="number"],
 input[type="text"],
-select,
-textarea {
+select {
   width: 100%;
   border: 2px solid var(--border);
   border-radius: 16px;
@@ -282,27 +257,12 @@ textarea {
   color: var(--text);
 }
 
-textarea {
-  resize: vertical;
-}
-
 input[type="number"]:focus,
 input[type="text"]:focus,
-select:focus,
-textarea:focus {
+select:focus {
   outline: none;
   border-color: var(--compare-btn-bg);
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
-}
-
-.compare-actions {
-  width: 100%;
-  max-width: 760px;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 8px;
 }
 
 @media (max-width: 640px) {
@@ -324,23 +284,18 @@ textarea:focus {
     font-size: 1.8rem;
   }
 
-  .shared-grid {
+  .calculator-grid,
+  .options-two-col {
     grid-template-columns: 1fr;
   }
 
   .primary-btn,
   .file-label,
   .compare-btn,
-  .secondary-btn,
   input[type="number"],
   input[type="text"],
-  select,
-  textarea {
+  select {
     width: 100%;
     min-width: 0;
-  }
-
-  .compare-actions {
-    flex-direction: column;
   }
 }
