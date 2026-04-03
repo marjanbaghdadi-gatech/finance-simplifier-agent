@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+--file-btn-bg: #0f4cc9;
+--file-btn-text: #ffffff;
+--file-btn-border: #0f4cc9;
+--file-btn-hover-bg: #08358d;
+--file-btn-hover-text: #ffffff;
+--file-btn-hover-border: #08358d;
+
 :root {
   --bg: #f4f7fb;
   --card: #ffffff;
@@ -122,10 +129,17 @@ input[type="file"] {
 }
 
 .file-label {
-  background: #eef2f7;
-  border: 2px solid var(--border);
-  color: var(--text);
+  background: var(--file-btn-bg);
+  border: 2px solid var(--file-btn-border);
+  color: var(--file-btn-text);
   margin-bottom: 14px;
+}
+
+.file-label:hover,
+.file-label:focus {
+  background: var(--file-btn-hover-bg);
+  border-color: var(--file-btn-hover-border);
+  color: var(--file-btn-hover-text);
 }
 
 .primary-btn {
