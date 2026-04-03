@@ -53,7 +53,7 @@
     <section class="compare card" aria-labelledby="compare-title">
       <h2 id="compare-title">Compare Two Financial Choices</h2>
       <p class="help-text">
-        Enter two options and compare them using the same type of time horizon.
+        Enter two options and compare them side by side.
       </p>
 
       <form
@@ -65,15 +65,6 @@
         <div class="options-two-col">
           <section class="option-card">
             <h3>Option 1</h3>
-
-            <label for="option1_name" class="field-label">Option name</label>
-            <input
-              id="option1_name"
-              name="option1_name"
-              type="text"
-              placeholder="Example: High-yield savings account"
-              required
-            />
 
             <label for="option1_type" class="field-label">Option type</label>
             <select id="option1_type" name="option1_type" required>
@@ -117,27 +108,10 @@
               placeholder="Example: 4"
               required
             />
-
-            <label for="option1_notes" class="field-label">Short note (optional)</label>
-            <input
-              id="option1_notes"
-              name="option1_notes"
-              type="text"
-              placeholder="Example: FDIC-insured and easy to access"
-            />
           </section>
 
           <section class="option-card">
             <h3>Option 2</h3>
-
-            <label for="option2_name" class="field-label">Option name</label>
-            <input
-              id="option2_name"
-              name="option2_name"
-              type="text"
-              placeholder="Example: S&P 500 ETF"
-              required
-            />
 
             <label for="option2_type" class="field-label">Option type</label>
             <select id="option2_type" name="option2_type" required>
@@ -181,27 +155,7 @@
               placeholder="Example: 8"
               required
             />
-
-            <label for="option2_notes" class="field-label">Short note (optional)</label>
-            <input
-              id="option2_notes"
-              name="option2_notes"
-              type="text"
-              placeholder="Example: More growth but higher ups and downs"
-            />
           </section>
-        </div>
-
-        <div class="calculator-grid">
-          <div class="field-block">
-            <label for="years_band" class="field-label">Years to compare</label>
-            <select id="years_band" name="years_band" required>
-              <option value="">Choose one</option>
-              <option value="short">Short term (1–3 years)</option>
-              <option value="mid">Mid term (3–7 years)</option>
-              <option value="long">Long term (7–10 years)</option>
-            </select>
-          </div>
         </div>
 
         <button class="compare-btn" type="submit">Compare My Options</button>
@@ -215,7 +169,7 @@
     <section class="info card">
       <h2>How it works</h2>
       <p>
-        The first tool explains uploaded financial documents in simpler language. The second tool compares two money choices using the same type of time horizon.
+        The first tool explains uploaded financial documents in simpler language. The second tool compares two money choices side by side.
       </p>
     </section>
   </main>
