@@ -19,6 +19,16 @@
   --file-btn-hover-bg: #084c59;
   --file-btn-hover-text: #ffffff;
   --file-btn-hover-border: #084c59;
+
+  --compare-btn-bg: #7c3aed;
+  --compare-btn-text: #ffffff;
+  --compare-btn-border: #7c3aed;
+  --compare-btn-hover-bg: #5b21b6;
+  --compare-btn-hover-text: #ffffff;
+  --compare-btn-hover-border: #5b21b6;
+
+  --compare-soft: #f3e8ff;
+  --compare-border: #d8b4fe;
 }
 
 body {
@@ -54,6 +64,11 @@ body {
 
 .hero {
   background: linear-gradient(180deg, #ffffff 0%, #eef5ff 100%);
+}
+
+.compare {
+  background: linear-gradient(180deg, #ffffff 0%, var(--compare-soft) 100%);
+  border-color: var(--compare-border);
 }
 
 .hero-badge {
@@ -114,7 +129,8 @@ input[type="file"] {
 }
 
 .file-label,
-.primary-btn {
+.primary-btn,
+.compare-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -155,6 +171,54 @@ input[type="file"] {
   border-color: var(--accent-dark);
 }
 
+.compare-btn {
+  border: 2px solid var(--compare-btn-border);
+  background: var(--compare-btn-bg);
+  color: var(--compare-btn-text);
+  margin-top: 10px;
+}
+
+.compare-btn:hover,
+.compare-btn:focus {
+  background: var(--compare-btn-hover-bg);
+  border-color: var(--compare-btn-hover-border);
+  color: var(--compare-btn-hover-text);
+}
+
+.compare-form {
+  gap: 10px;
+}
+
+.field-label {
+  width: 100%;
+  max-width: 760px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  margin-top: 8px;
+}
+
+textarea {
+  width: 100%;
+  max-width: 760px;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  background: #ffffff;
+  color: var(--text);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--compare-btn-bg);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
 @media (max-width: 640px) {
   body {
     font-size: 18px;
@@ -175,8 +239,14 @@ input[type="file"] {
   }
 
   .primary-btn,
-  .file-label {
+  .file-label,
+  .compare-btn,
+  textarea {
     width: 100%;
     min-width: 0;
+  }
+
+  .field-label {
+    max-width: 100%;
   }
 }
