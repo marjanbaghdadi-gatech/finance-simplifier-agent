@@ -36,8 +36,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
-  font-size: 20px;
+  line-height: 1.75;
+  font-size: 40px;
 }
 
 .page {
@@ -52,14 +52,14 @@ body {
   background: var(--card);
   border: 2px solid var(--border);
   border-radius: 22px;
-  padding: 28px;
+  padding: 36px;
   box-shadow: var(--shadow);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
+  min-height: 260px;
 }
 
 .hero {
@@ -71,17 +71,6 @@ body {
   border-color: var(--compare-border);
 }
 
-.hero-badge {
-  display: inline-block;
-  background: var(--soft);
-  color: var(--accent-dark);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
 h1,
 h2,
 h3 {
@@ -91,18 +80,18 @@ h3 {
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 14px;
+  font-size: 4.4rem;
+  margin-bottom: 18px;
 }
 
 h2 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
+  font-size: 3.2rem;
+  margin-bottom: 16px;
 }
 
 h3 {
-  font-size: 1.25rem;
-  margin-bottom: 16px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .lead,
@@ -110,7 +99,7 @@ h3 {
 .small-note,
 .file-status,
 .info p {
-  font-size: 1.08rem;
+  font-size: 2.16rem;
   text-align: center;
   max-width: 760px;
 }
@@ -139,11 +128,11 @@ input[type="file"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 280px;
-  height: 58px;
-  padding: 0 24px;
-  border-radius: 16px;
-  font-size: 1.08rem;
+  min-width: 320px;
+  height: 84px;
+  padding: 0 28px;
+  border-radius: 20px;
+  font-size: 2.16rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
@@ -153,7 +142,7 @@ input[type="file"] {
   background: var(--file-btn-bg);
   border: 2px solid var(--file-btn-border);
   color: var(--file-btn-text);
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .file-label:hover,
@@ -167,7 +156,7 @@ input[type="file"] {
   border: 2px solid var(--accent);
   background: var(--accent);
   color: #ffffff;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .primary-btn:hover,
@@ -191,17 +180,7 @@ input[type="file"] {
 }
 
 .compare-form {
-  gap: 16px;
-}
-
-.calculator-grid {
-  width: 100%;
-  max-width: 760px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 6px;
-  margin-bottom: 8px;
+  gap: 18px;
 }
 
 .options-two-col {
@@ -217,7 +196,7 @@ input[type="file"] {
   background: rgba(255, 255, 255, 0.84);
   border: 2px solid var(--compare-border);
   border-radius: 18px;
-  padding: 20px;
+  padding: 24px;
   text-align: left;
 }
 
@@ -225,22 +204,14 @@ input[type="file"] {
   text-align: center;
 }
 
-.field-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  text-align: left;
-}
-
 .field-label {
   width: 100%;
   text-align: left;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 2rem;
   color: var(--text);
-  margin-top: 4px;
-  margin-bottom: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 input[type="number"],
@@ -249,17 +220,22 @@ select {
   width: 100%;
   border: 2px solid var(--border);
   border-radius: 16px;
-  padding: 14px 16px;
+  padding: 18px 18px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 1.5;
   background: #ffffff;
   color: var(--text);
 }
 
+/* Keep placeholder text the same size as before */
+input::placeholder {
+  font-size: 1rem;
+}
+
+select:focus,
 input[type="number"]:focus,
-input[type="text"]:focus,
-select:focus {
+input[type="text"]:focus {
   outline: none;
   border-color: var(--compare-btn-bg);
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
@@ -267,7 +243,7 @@ select:focus {
 
 @media (max-width: 640px) {
   body {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .page {
@@ -275,27 +251,51 @@ select:focus {
   }
 
   .card {
-    padding: 20px;
+    padding: 22px;
     border-radius: 18px;
     min-height: 0;
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
 
-  .calculator-grid,
-  .options-two-col {
-    grid-template-columns: 1fr;
+  h2 {
+    font-size: 2.3rem;
   }
 
-  .primary-btn,
+  h3 {
+    font-size: 2rem;
+  }
+
+  .lead,
+  .help-text,
+  .small-note,
+  .file-status,
+  .info p {
+    font-size: 1.5rem;
+  }
+
+  .field-label {
+    font-size: 1.5rem;
+  }
+
   .file-label,
+  .primary-btn,
   .compare-btn,
   input[type="number"],
   input[type="text"],
   select {
     width: 100%;
     min-width: 0;
+    font-size: 1.5rem;
+  }
+
+  .options-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  input::placeholder {
+    font-size: 1rem;
   }
 }
