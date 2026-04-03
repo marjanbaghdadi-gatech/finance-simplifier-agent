@@ -2,13 +2,6 @@
   box-sizing: border-box;
 }
 
---file-btn-bg: #0f4cc9;
---file-btn-text: #ffffff;
---file-btn-border: #0f4cc9;
---file-btn-hover-bg: #08358d;
---file-btn-hover-text: #ffffff;
---file-btn-hover-border: #08358d;
-
 :root {
   --bg: #f4f7fb;
   --card: #ffffff;
@@ -19,6 +12,13 @@
   --soft: #dbeafe;
   --border: #d6deeb;
   --shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
+
+  --file-btn-bg: #0b7285;
+  --file-btn-text: #ffffff;
+  --file-btn-border: #0b7285;
+  --file-btn-hover-bg: #084c59;
+  --file-btn-hover-text: #ffffff;
+  --file-btn-hover-border: #084c59;
 }
 
 body {
@@ -153,11 +153,6 @@ input[type="file"] {
 .primary-btn:focus {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
-}
-
-.file-label:hover,
-.file-label:focus {
-  background: #e3ebf5;
 }
 
 @media (max-width: 640px) {
