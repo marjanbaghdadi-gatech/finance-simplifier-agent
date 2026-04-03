@@ -12,7 +12,7 @@
       <div class="hero-badge">Easy to Read</div>
       <h1>Understand Financial Information More Easily</h1>
       <p class="lead">
-        Use one tool to simplify a financial document, or compare up to four financial choices in plain language.
+        Use one tool to simplify a financial document, or compare two financial choices in plain language.
       </p>
     </section>
 
@@ -51,9 +51,9 @@
     </section>
 
     <section class="compare card" aria-labelledby="compare-title">
-      <h2 id="compare-title">Financial Decision Comparison Assistant</h2>
+      <h2 id="compare-title">Compare Two Financial Choices</h2>
       <p class="help-text">
-        Compare two to four financial choices using the same amount of money and the same time period.
+        Enter the same starting amount and time period, then compare two options side by side.
       </p>
 
       <form
@@ -62,7 +62,7 @@
         target="_blank"
         class="compare-form"
       >
-        <div class="shared-grid">
+        <div class="calculator-grid">
           <div class="field-block">
             <label for="amount" class="field-label">Starting amount</label>
             <input
@@ -77,7 +77,7 @@
           </div>
 
           <div class="field-block">
-            <label for="years" class="field-label">How many years?</label>
+            <label for="years" class="field-label">Years to compare</label>
             <input
               id="years"
               name="years"
@@ -90,40 +90,30 @@
           </div>
 
           <div class="field-block">
-            <label for="monthly_contribution" class="field-label">Monthly contribution (optional)</label>
+            <label for="monthly_contribution" class="field-label">Additional contributions</label>
             <input
               id="monthly_contribution"
               name="monthly_contribution"
               type="number"
               min="0"
               step="0.01"
-              placeholder="Example: 200"
+              placeholder="Example: 50"
             />
           </div>
 
           <div class="field-block">
-            <label for="risk_level" class="field-label">Risk comfort level</label>
-            <select id="risk_level" name="risk_level">
-              <option value="">Choose one</option>
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-            </select>
+            <label for="what_matters" class="field-label">What matters most to you?</label>
+            <input
+              id="what_matters"
+              name="what_matters"
+              type="text"
+              placeholder="Example: low risk, growth, easy access"
+            />
           </div>
         </div>
 
-        <div class="field-block full-width">
-          <label for="what_matters" class="field-label">What matters most to you?</label>
-          <textarea
-            id="what_matters"
-            name="what_matters"
-            rows="4"
-            placeholder="Example: low risk, easy access to money, long-term growth, steady return"
-          ></textarea>
-        </div>
-
-        <div id="optionsContainer" class="options-container">
-          <section class="option-card" data-option="1">
+        <div class="options-two-col">
+          <section class="option-card">
             <h3>Option 1</h3>
 
             <label for="option1_name" class="field-label">Option name</label>
@@ -147,25 +137,26 @@
               <option value="other">Other</option>
             </select>
 
-            <label for="option1_rate" class="field-label">Expected annual rate or APY (optional)</label>
+            <label for="option1_rate" class="field-label">Expected annual return or APY</label>
             <input
               id="option1_rate"
               name="option1_rate"
               type="number"
               step="0.01"
-              placeholder="Example: 4 or 8"
+              placeholder="Example: 4"
+              required
             />
 
-            <label for="option1_notes" class="field-label">Extra notes (optional)</label>
-            <textarea
+            <label for="option1_notes" class="field-label">Short note (optional)</label>
+            <input
               id="option1_notes"
               name="option1_notes"
-              rows="4"
-              placeholder="Example: online account, ETF that follows the S&P 500, may need money in 2 years"
-            ></textarea>
+              type="text"
+              placeholder="Example: FDIC-insured and easy to access"
+            />
           </section>
 
-          <section class="option-card" data-option="2">
+          <section class="option-card">
             <h3>Option 2</h3>
 
             <label for="option2_name" class="field-label">Option name</label>
@@ -189,32 +180,30 @@
               <option value="other">Other</option>
             </select>
 
-            <label for="option2_rate" class="field-label">Expected annual rate or APY (optional)</label>
+            <label for="option2_rate" class="field-label">Expected annual return or APY</label>
             <input
               id="option2_rate"
               name="option2_rate"
               type="number"
               step="0.01"
-              placeholder="Example: 4 or 8"
+              placeholder="Example: 8"
+              required
             />
 
-            <label for="option2_notes" class="field-label">Extra notes (optional)</label>
-            <textarea
+            <label for="option2_notes" class="field-label">Short note (optional)</label>
+            <input
               id="option2_notes"
               name="option2_notes"
-              rows="4"
-              placeholder="Example: broad market ETF, long-term growth focus"
-            ></textarea>
+              type="text"
+              placeholder="Example: More growth but higher ups and downs"
+            />
           </section>
         </div>
 
-        <div class="compare-actions">
-          <button id="addOptionBtn" class="secondary-btn" type="button">Add Another Option</button>
-          <button class="compare-btn" type="submit">Compare My Options</button>
-        </div>
+        <button class="compare-btn" type="submit">Compare My Options</button>
 
         <p class="small-note">
-          You can compare up to 4 options. The result will open in a new tab.
+          The comparison result will open in a new tab.
         </p>
       </form>
     </section>
@@ -222,7 +211,7 @@
     <section class="info card">
       <h2>How it works</h2>
       <p>
-        The first tool explains uploaded financial documents in simpler language. The second tool compares money choices using the same starting amount and time period.
+        The first tool explains uploaded financial documents in simpler language. The second tool compares two money choices using the same starting amount and time period.
       </p>
     </section>
   </main>
