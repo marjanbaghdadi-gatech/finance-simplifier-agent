@@ -1,85 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Easy Financial Document Helper</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main class="page">
-    <section class="hero card">
-      <div class="hero-badge">Simple • Clear • Easy to Read</div>
-      <h1>Understand Your Financial PDF</h1>
-      <p class="lead">
-        Upload a PDF and get a simpler explanation in larger, easier-to-read language.
-      </p>
-    </section>
+const pdfFileInput = document.getElementById("pdfFile");
+const fileStatus = document.getElementById("fileStatus");
+const uploadTabBtn = document.getElementById("uploadTabBtn");
+const resultsTabBtn = document.getElementById("resultsTabBtn");
+const uploadTab = document.getElementById("uploadTab");
+const resultsTab = document.getElementById("resultsTab");
+const uploadForm = document.getElementById("uploadForm");
 
-    <section class="tabs card">
-      <div class="tab-buttons" role="tablist" aria-label="Main sections">
-        <button id="uploadTabBtn" class="tab-btn active" type="button" role="tab" aria-selected="true">
-          Upload
-        </button>
-        <button id="resultsTabBtn" class="tab-btn" type="button" role="tab" aria-selected="false">
-          Results
-        </button>
-      </div>
+function showTab(tabName) {
+  const showUpload = tabName === "upload";
 
-      <div id="uploadTab" class="tab-panel active" role="tabpanel">
-        <h2>Upload your file</h2>
-        <p class="help-text">
-          Choose one PDF document, then press the button below.
-        </p>
+  uploadTab.classList.toggle("active", showUpload);
+  resultsTab.classList.toggle("active", !showUpload);
 
-        <form
-          id="uploadForm"
-          action="https://mbaghdadi6g.app.n8n.cloud/webhook/simplify-financial-pdf"
-          method="POST"
-          enctype="multipart/form-data"
-          target="resultsFrame"
-        >
-          <input
-            id="pdfFile"
-            name="data"
-            type="file"
-            accept="application/pdf"
-            required
-          />
+  uploadTabBtn.classList.toggle("active", showUpload);
+  resultsTabBtn.classList.toggle("active", !showUpload);
 
-          <label for="pdfFile" class="file-btn">Choose PDF File</label>
+  uploadTabBtn.setAttribute("aria-selected", showUpload ? "true" : "false");
+  resultsTabBtn.setAttribute("aria-selected", showUpload ? "false" : "true");
+}
 
-          <div id="fileStatus" class="file-status" aria-live="polite">
-            No file selected yet.
-          </div>
+uploadTabBtn.addEventListener("click", () => showTab("upload"));
+resultsTabBtn.addEventListener("click", () => showTab("results"));
 
-          <button id="submitBtn" class="primary-btn" type="submit">
-            Simplify My Document
-          </button>
+if (pdfFileInput && fileStatus) {
+  pdfFileInput.addEventListener("change", () => {
+    const file = pdfFileInput.files[0];
 
-          <p class="small-note">
-            The result will appear in the Results tab below.
-          </p>
-        </form>
-      </div>
+    if (!file) {
+      fileStatus.textContent = "No file selected yet.";
+      return;
+    }
 
-      <div id="resultsTab" class="tab-panel" role="tabpanel">
-        <h2>Your result</h2>
-        <p class="help-text">
-          When you submit a PDF, the simplified explanation will appear here.
-        </p>
+    if (file.type !== "application/pdf") {
+      fileStatus.textContent = "Please choose a PDF file.";
+      return;
+    }
 
-        <div class="results-shell">
-          <iframe
-            id="resultsFrame"
-            name="resultsFrame"
-            title="Simplified financial explanation"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
+    const fileSizeMb = (file.size / (1024 * 1024)).toFixed(1);
+    fileStatus.textContent = `Selected file: ${file.name} (${fileSizeMb} MB)`;
+  });
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+if (uploadForm) {
+  uploadForm.addEventListener("submit", () => {
+    showTab("results");
+  });
+}
