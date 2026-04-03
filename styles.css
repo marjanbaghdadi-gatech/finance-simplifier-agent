@@ -37,7 +37,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.75;
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .page {
@@ -52,14 +52,14 @@ body {
   background: var(--card);
   border: 2px solid var(--border);
   border-radius: 22px;
-  padding: 36px;
+  padding: 32px;
   box-shadow: var(--shadow);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 260px;
+  min-height: 240px;
 }
 
 .hero {
@@ -80,18 +80,18 @@ h3 {
 }
 
 h1 {
-  font-size: 4.4rem;
-  margin-bottom: 18px;
-}
-
-h2 {
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   margin-bottom: 16px;
 }
 
+h2 {
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+}
+
 h3 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.1rem;
+  margin-bottom: 18px;
 }
 
 .lead,
@@ -99,7 +99,7 @@ h3 {
 .small-note,
 .file-status,
 .info p {
-  font-size: 2.16rem;
+  font-size: 1.75rem;
   text-align: center;
   max-width: 760px;
 }
@@ -129,10 +129,10 @@ input[type="file"] {
   align-items: center;
   justify-content: center;
   min-width: 320px;
-  height: 84px;
+  height: 74px;
   padding: 0 28px;
-  border-radius: 20px;
-  font-size: 2.16rem;
+  border-radius: 18px;
+  font-size: 1.75rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
@@ -142,7 +142,7 @@ input[type="file"] {
   background: var(--file-btn-bg);
   border: 2px solid var(--file-btn-border);
   color: var(--file-btn-text);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .file-label:hover,
@@ -208,7 +208,7 @@ input[type="file"] {
   width: 100%;
   text-align: left;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--text);
   margin-top: 8px;
   margin-bottom: 8px;
@@ -222,13 +222,12 @@ select {
   border-radius: 16px;
   padding: 18px 18px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   background: #ffffff;
   color: var(--text);
 }
 
-/* Keep placeholder text the same size as before */
 input::placeholder {
   font-size: 1rem;
 }
@@ -243,7 +242,7 @@ input[type="text"]:focus {
 
 @media (max-width: 640px) {
   body {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .page {
@@ -257,15 +256,15 @@ input[type="text"]:focus {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   h2 {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .lead,
@@ -273,11 +272,11 @@ input[type="text"]:focus {
   .small-note,
   .file-status,
   .info p {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .field-label {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .file-label,
@@ -288,7 +287,7 @@ input[type="text"]:focus {
   select {
     width: 100%;
     min-width: 0;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .options-two-col {
