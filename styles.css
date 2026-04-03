@@ -106,42 +106,44 @@ input[type="file"] {
   display: none;
 }
 
-.file-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #eef2f7;
-  border: 2px solid var(--border);
-  color: var(--text);
-  padding: 14px 20px;
-  border-radius: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 14px;
-  min-width: 240px;
-  text-align: center;
-}
-
+.file-label,
 .primary-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  background: var(--accent);
-  color: #ffffff;
-  padding: 16px 24px;
+  min-width: 280px;
+  height: 58px;
+  padding: 0 24px;
   border-radius: 16px;
   font-size: 1.08rem;
   font-weight: 700;
-  cursor: pointer;
-  min-width: 240px;
-  margin-top: 10px;
   text-align: center;
+  cursor: pointer;
+}
+
+.file-label {
+  background: #eef2f7;
+  border: 2px solid var(--border);
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.primary-btn {
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  margin-top: 10px;
 }
 
 .primary-btn:hover,
 .primary-btn:focus {
   background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.file-label:hover,
+.file-label:focus {
+  background: #e3ebf5;
 }
 
 @media (max-width: 640px) {
