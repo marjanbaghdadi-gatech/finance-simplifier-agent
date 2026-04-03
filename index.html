@@ -9,54 +9,74 @@
 <body>
   <main class="page">
     <section class="hero card">
-      <div class="hero-badge">Easy to Read</div>
+      <div class="hero-badge">Simple • Clear • Easy to Read</div>
       <h1>Understand Your Financial PDF</h1>
       <p class="lead">
-        Upload a PDF and get a simple explanation in clear language.
-        This page is designed to be easier to read for older adults and anyone who wants less confusing wording.
+        Upload a PDF and get a simpler explanation in larger, easier-to-read language.
       </p>
     </section>
 
-    <section class="upload card" aria-labelledby="upload-title">
-      <h2 id="upload-title">Upload your file</h2>
-      <p class="help-text">
-        Choose a PDF document, then press the button below.
-      </p>
+    <section class="tabs card">
+      <div class="tab-buttons" role="tablist" aria-label="Main sections">
+        <button id="uploadTabBtn" class="tab-btn active" type="button" role="tab" aria-selected="true">
+          Upload
+        </button>
+        <button id="resultsTabBtn" class="tab-btn" type="button" role="tab" aria-selected="false">
+          Results
+        </button>
+      </div>
 
-      <form
-        action="https://mbaghdadi6g.app.n8n.cloud/webhook/simplify-financial-pdf"
-        method="POST"
-        enctype="multipart/form-data"
-        target="_blank"
-        id="uploadForm"
-      >
-        
-        <label for="pdfFile" class="file-label">Choose PDF File</label>
-        <input
-          id="pdfFile"
-          name="data"
-          type="file"
-          accept="application/pdf"
-          required
-        />
-
-        <div id="fileStatus" class="file-status" aria-live="polite">
-          No file selected yet.
-        </div>
-
-        <button class="primary-btn" type="submit">Simplify My Document</button>
-
-        <p class="small-note">
-          The simplified result will open in a new tab.
+      <div id="uploadTab" class="tab-panel active" role="tabpanel">
+        <h2>Upload your file</h2>
+        <p class="help-text">
+          Choose one PDF document, then press the button below.
         </p>
-      </form>
-    </section>
 
-    <section class="info card">
-      <h2>How it works</h2>
-      <p>
-        This tool sends your PDF to the document helper, which reads the file and returns a simpler explanation.
-      </p>
+        <form
+          id="uploadForm"
+          action="https://mbaghdadi6g.app.n8n.cloud/webhook/simplify-financial-pdf"
+          method="POST"
+          enctype="multipart/form-data"
+          target="resultsFrame"
+        >
+          <input
+            id="pdfFile"
+            name="data"
+            type="file"
+            accept="application/pdf"
+            required
+          />
+
+          <label for="pdfFile" class="file-btn">Choose PDF File</label>
+
+          <div id="fileStatus" class="file-status" aria-live="polite">
+            No file selected yet.
+          </div>
+
+          <button id="submitBtn" class="primary-btn" type="submit">
+            Simplify My Document
+          </button>
+
+          <p class="small-note">
+            The result will appear in the Results tab below.
+          </p>
+        </form>
+      </div>
+
+      <div id="resultsTab" class="tab-panel" role="tabpanel">
+        <h2>Your result</h2>
+        <p class="help-text">
+          When you submit a PDF, the simplified explanation will appear here.
+        </p>
+
+        <div class="results-shell">
+          <iframe
+            id="resultsFrame"
+            name="resultsFrame"
+            title="Simplified financial explanation"
+          ></iframe>
+        </div>
+      </div>
     </section>
   </main>
 
