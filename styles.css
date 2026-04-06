@@ -36,8 +36,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.75;
-  font-size: 32px;
+  line-height: 1.55;
+  font-size: 24px;
 }
 
 .page {
@@ -75,23 +75,23 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  line-height: 1.25;
+  line-height: 1.2;
   text-align: center;
 }
 
 h1 {
-  font-size: 3.6rem;
-  margin-bottom: 16px;
-}
-
-h2 {
-  font-size: 2.6rem;
+  font-size: 3rem;
   margin-bottom: 14px;
 }
 
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
 h3 {
-  font-size: 2.1rem;
-  margin-bottom: 18px;
+  font-size: 1.8rem;
+  margin-bottom: 14px;
 }
 
 .lead,
@@ -99,9 +99,10 @@ h3 {
 .small-note,
 .file-status,
 .info p {
-  font-size: 1.75rem;
+  font-size: 1.35rem;
   text-align: center;
   max-width: 760px;
+  line-height: 1.55;
 }
 
 .help-text,
@@ -129,10 +130,10 @@ input[type="file"] {
   align-items: center;
   justify-content: center;
   min-width: 320px;
-  height: 74px;
-  padding: 0 28px;
+  min-height: 64px;
+  padding: 14px 28px;
   border-radius: 18px;
-  font-size: 1.75rem;
+  font-size: 1.35rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
@@ -208,7 +209,7 @@ input[type="file"] {
   width: 100%;
   text-align: left;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text);
   margin-top: 8px;
   margin-bottom: 8px;
@@ -220,10 +221,10 @@ select {
   width: 100%;
   border: 2px solid var(--border);
   border-radius: 16px;
-  padding: 18px 18px;
+  padding: 16px 18px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  line-height: 1.4;
   background: #ffffff;
   color: var(--text);
 }
@@ -240,9 +241,62 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
 }
 
+/* Result block from the AI */
+.analysis {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 22px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  text-align: left;
+  line-height: 1.5;
+}
+
+.analysis h2 {
+  text-align: left;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: #10233f;
+}
+
+.analysis > * + h2 {
+  margin-top: 24px;
+}
+
+.analysis p {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.analysis ul {
+  margin: 0 0 14px;
+  padding-left: 1.35rem;
+}
+
+.analysis li {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.analysis li:last-child {
+  margin-bottom: 0;
+}
+
+.analysis p:empty,
+.analysis li:empty {
+  display: none;
+}
+
 @media (max-width: 640px) {
   body {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .page {
@@ -256,15 +310,15 @@ input[type="text"]:focus {
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.3rem;
   }
 
   h2 {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
 
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .lead,
@@ -272,11 +326,11 @@ input[type="text"]:focus {
   .small-note,
   .file-status,
   .info p {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
   }
 
   .field-label {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .file-label,
@@ -287,14 +341,33 @@ input[type="text"]:focus {
   select {
     width: 100%;
     min-width: 0;
-    font-size: 1.35rem;
+    font-size: 1.1rem;
   }
 
   .options-two-col {
     grid-template-columns: 1fr;
   }
 
-  input::placeholder {
+  .analysis {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .analysis h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .analysis > * + h2 {
+    margin-top: 18px;
+  }
+
+  .analysis p,
+  .analysis li {
     font-size: 1rem;
+  }
+
+  input::placeholder {
+    font-size: 0.95rem;
   }
 }
