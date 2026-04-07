@@ -30,15 +30,15 @@
   --compare-soft: #f3e8ff;
   --compare-border: #d8b4fe;
 
-  --feedback-btn-bg: #ea580c;
+  --feedback-btn-bg: #2f9e44;
   --feedback-btn-text: #ffffff;
-  --feedback-btn-border: #ea580c;
-  --feedback-btn-hover-bg: #c2410c;
+  --feedback-btn-border: #2f9e44;
+  --feedback-btn-hover-bg: #237a35;
   --feedback-btn-hover-text: #ffffff;
-  --feedback-btn-hover-border: #c2410c;
+  --feedback-btn-hover-border: #237a35;
 
-  --feedback-soft: #fff7ed;
-  --feedback-border: #fdba74;
+  --feedback-soft: #ebfbee;
+  --feedback-border: #8ce99a;
 }
 
 body {
@@ -322,6 +322,14 @@ input[type="text"]:focus {
   width: 100%;
 }
 
+.feedback-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .feedback-text {
   font-size: 1.35rem;
   line-height: 1.55;
@@ -436,6 +444,10 @@ input[type="text"]:focus {
   .info p,
   .feedback-text {
     font-size: 1.1rem;
+  }
+
+  .feedback-section h2 {
+    font-size: 1.8rem;
   }
 
   .field-label {
