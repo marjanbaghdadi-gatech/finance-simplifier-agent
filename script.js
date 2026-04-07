@@ -20,25 +20,34 @@ if (pdfFileInput && fileStatus) {
   });
 }
 
-const openFeedbackBtn = document.getElementById("openFeedbackBtn");
-const closeFeedbackBtn = document.getElementById("closeFeedbackBtn");
-const feedbackModal = document.getElementById("feedbackModal");
+window.addEventListener("DOMContentLoaded", function () {
+  const openFeedbackBtn = document.getElementById("openFeedbackBtn");
+  const closeFeedbackBtn = document.getElementById("closeFeedbackBtn");
+  const feedbackModal = document.getElementById("feedbackModal");
 
-if (openFeedbackBtn && closeFeedbackBtn && feedbackModal) {
-  openFeedbackBtn.addEventListener("click", function () {
-    feedbackModal.classList.add("show");
-    feedbackModal.setAttribute("aria-hidden", "false");
-  });
+  console.log("openFeedbackBtn:", openFeedbackBtn);
+  console.log("closeFeedbackBtn:", closeFeedbackBtn);
+  console.log("feedbackModal:", feedbackModal);
 
-  closeFeedbackBtn.addEventListener("click", function () {
-    feedbackModal.classList.remove("show");
-    feedbackModal.setAttribute("aria-hidden", "true");
-  });
+  if (openFeedbackBtn && closeFeedbackBtn && feedbackModal) {
+    openFeedbackBtn.addEventListener("click", function () {
+      console.log("Feedback button clicked");
+      feedbackModal.classList.add("show");
+      feedbackModal.setAttribute("aria-hidden", "false");
+    });
 
-  feedbackModal.addEventListener("click", function (event) {
-    if (event.target === feedbackModal) {
+    closeFeedbackBtn.addEventListener("click", function () {
       feedbackModal.classList.remove("show");
       feedbackModal.setAttribute("aria-hidden", "true");
-    }
-  });
-}
+    });
+
+    feedbackModal.addEventListener("click", function (event) {
+      if (event.target === feedbackModal) {
+        feedbackModal.classList.remove("show");
+        feedbackModal.setAttribute("aria-hidden", "true");
+      }
+    });
+  } else {
+    console.log("Feedback modal elements not found.");
+  }
+});
