@@ -19,3 +19,24 @@ if (pdfFileInput && fileStatus) {
     fileStatus.textContent = `Selected file: ${file.name} (${fileSizeMb} MB)`;
   });
 }
+
+  const openFeedbackBtn = document.getElementById('openFeedbackBtn');
+  const closeFeedbackBtn = document.getElementById('closeFeedbackBtn');
+  const feedbackModal = document.getElementById('feedbackModal');
+
+  openFeedbackBtn.addEventListener('click', function () {
+    feedbackModal.classList.add('show');
+    feedbackModal.setAttribute('aria-hidden', 'false');
+  });
+
+  closeFeedbackBtn.addEventListener('click', function () {
+    feedbackModal.classList.remove('show');
+    feedbackModal.setAttribute('aria-hidden', 'true');
+  });
+
+  feedbackModal.addEventListener('click', function (event) {
+    if (event.target === feedbackModal) {
+      feedbackModal.classList.remove('show');
+      feedbackModal.setAttribute('aria-hidden', 'true');
+    }
+  });
