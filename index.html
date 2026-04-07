@@ -173,6 +173,34 @@
     </section>
   </main>
 
+  <div class="feedback-section">
+  <p class="feedback-text">Please tell us what was helpful or confusing.</p>
+  <button id="openFeedbackBtn" type="button">Share Feedback</button>
+  </div>
+
   <script src="script.js"></script>
+
+<div id="feedbackModal" class="feedback-modal" aria-hidden="true">
+  <div class="feedback-modal-content">
+    <button id="closeFeedbackBtn" class="feedback-close" type="button" aria-label="Close feedback form">
+      ×
+    </button>
+
+    <h2>Share Feedback</h2>
+    <p>Your feedback helps us improve this tool.</p>
+
+    <iframe
+      src="PASTE_YOUR_GOOGLE_FORM_EMBED_LINK_HERE"
+      width="100%"
+      height="600"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Feedback Form">
+      Loading…
+    </iframe>
+  </div>
+</div>
+  
 </body>
 </html>
